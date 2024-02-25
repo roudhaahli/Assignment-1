@@ -1,0 +1,176 @@
+from enum import Enum
+from datetime import datetime
+
+class SeatClass(Enum):
+    '''Class to represent the ENUM for the seatclass 3 types'''
+    ECONOMY = 1
+    BUSINESS = 2
+    FIRST_CLASS = 3
+
+class Person:
+    '''Class to represent a Person'''
+    
+    #Initializing the constructor
+    def __init__(self, firstName, lastName, dateOfBirth, age, nationality, email):
+        self._firstName = firstName #protected 
+        self._lastName = lastName #protected
+        self._dateOfBirth = dateOfBirth #protected
+        self._age = age #protected
+        self._nationality = nationality #protected
+        self._email = email #protected
+
+    #Getter and Setter Methods for firstName
+    def getFirstName(self):
+        return self._firstName
+
+    def setFirstName(self, firstName):
+        self._firstName = firstName
+    
+    #Getter and Setter Methods for lastName
+    def getLastName(self):
+        return self._lastName
+
+    def setLastName(self, lastName):
+        self._lastName = lastName
+        
+    #Getter and Setter Methods for dateOfBirth
+    def getDateOfBirth(self):
+        return self._dateOfBirth
+
+    def setDateOfBirth(self, dateOfBirth):
+        self._dateOfBirth = dateOfBirth
+    
+    #Getter and Setter Methods for age
+    def getAge(self):
+        return self._age
+
+    def setAge(self, age):
+        self._age = age
+
+    #Getter and Setter Methods for nationality
+    def getNationality(self):
+        return self._nationality
+
+    def setNationality(self, nationality):
+        self._nationality = nationality
+    
+    #Getter and Setter Methods for email
+    def getEmail(self):
+        return self._email
+
+    def setEmail(self, email):
+        self._email = email
+
+
+class Passenger(Person):
+    '''Class to represent a Passenger as a child of the Person class'''
+    
+    #Initializing the constructor
+    def __init__(self, firstName, lastName, dateOfBirth, age, nationality, email, passportID, passengerID):
+        #Initialize the attributes of the parent class
+        super().__init__(firstName, lastName, dateOfBirth, age, nationality, email)
+        self.__passportID = passportID #private
+        self.__passengerID = passengerID #private
+
+    #Getter and Setter Methods for passportID
+    def getPassportID(self):
+        return self.__passportID
+
+    def setPassportID(self, passportID):
+        self.__passportID = passportID
+
+    #Getter and Setter Methods for passengerID
+    def getPassengerID(self):
+        return self.__passengerID
+    
+    def set_PassengerID(self, passengerID):
+        self.__passengerID = passengerID
+
+
+class CabinCrew(Person):
+    '''Class to represent a CabinCrew as a child of the Person class'''
+    
+    #Initializing the constructor
+    def __init__(self, firstName, lastName, dateOfBirth, age, nationality, email, employeeID, yearsofExperience):
+        #Initialize the attributes of the parent class
+        super().__init__(firstName, lastName, dateOfBirth, age, nationality, email)
+        self.__employeeID = employeeID #private
+        self.__yearsofExperience = yearsofExperience #private
+
+    #Getter and Setter Methods for employeeID
+    def getEmployeeID(self):
+        return self.__employeeID
+
+    def setEmployeeID(self, employeeID):
+        self.__employeeID = employeeID
+
+    #Getter and Setter Methods for yearsofExperience
+    def getYearsofExperience(self):
+        return self.__yearsofExperience
+
+    def setYearsofExperience(self, yearsofExperience):
+        self.__yearsofExperience = yearsofExperience
+
+
+class BoardingPass:
+    '''Class to represent a Boarding Pass'''
+      
+    #Initializing the constructor
+    def __init__(self, passengerName, departurefrom, arrivingto, seatclass, flightnum, flightdate, seat):
+        self.__passengerName = passengerName
+        self.__departurefrom = departurefrom
+        self.__arrivingto = arrivingto
+        self.__seatclass = seatclass
+        self.__flightnum = flightnum
+        self.__flightdate = flightdate
+        self.__seat = seat
+
+    #Getter and Setter Methods for passengerName
+    def getPassengerName(self):
+        return self.__passengerName
+
+    def setPassengerName(self, passengerName):
+        self.__passengerName = passengerName
+        
+    #Getter and Setter Methods for departurefrom
+    def getDepartureFrom(self):
+        return self.__departurefrom
+
+    def setDepartureFrom(self, departurefrom):
+        self.__departurefrom = departurefrom
+
+    #Getter and Setter Methods for arrivingto
+    def getArrivingTo(self):
+        return self.__arrivingto
+
+    def setArrivingTo(self, arrivingto):
+        self.__arrivingto = arrivingto
+
+    #Getter and Setter Methods for seatclass
+    def getSeatClass(self):
+        return self.__seatclass
+
+    def setSeatClass(self, seatclass):
+        self.__seatclass = seatclass
+
+    #Getter and Setter Methods for flightnum
+    def getFlightNum(self):
+        return self.__flightnum
+
+    def setFlightNum(self, flightnum):
+        self.__flightnum = flightnum
+        
+    #Getter and Setter Methods for flightdate
+    def getFlightDate(self):
+        return self.__flightdate
+
+    def setFlightDate(self, flightdate):
+        self.__flightdate = flightdate
+    
+    #Getter and Setter Methods for seat
+    def getSeat(self):
+        return self.__seat
+
+    def setSeat(self, seat):
+        self.__seat = seat
+
